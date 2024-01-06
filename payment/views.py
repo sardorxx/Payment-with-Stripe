@@ -28,7 +28,8 @@ class BuyItemView(View):
             success_url=request.build_absolute_uri('/success/'),
             cancel_url=request.build_absolute_uri('/cancel/'),
         )
-        return JsonResponse({'session_id': session.id})
+        return redirect(session.url)
+        # return JsonResponse({'session_id': session.id})
 
 
 class ItemDetailView(View):
